@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="UTF-8">
+<title>{%=title%}</title>
+<link rel="stylesheet" href="../../common/css/bootstrap.less">
+<link rel="stylesheet" href="../../common/css/common.scss">
+<!-- 这里出输 head内容 -->
+<layout-block name="head"></layout-block>
+</head>
+
+<body>
+    <div class="container">
+        <include include-src="../header/header.html" data-nav=`[
+            {"href": "#", "text"="home"},
+            {"href": "#", "text"="link1"},
+            {"href": "#", "text"="link2"}
+        ]`></include>
+
+        <layout-block name="main"></layout-block>
+
+        <include include-src="../footer/footer.html"></include>
+    </div>
+
+
+<script src="../../common/js/mod.js"></script>    
+<script src="../../common/js/jquery.min.js"></script>    
+<script src="../../common/js/swiper-3.4.2.min.js"></script>    
+</body>
+</html>

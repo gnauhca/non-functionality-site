@@ -1,0 +1,15 @@
+{
+  "name": "non-functionality-site-fis",
+  "version": "1.0.0",
+  "description": "non-functionality-site-fis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "fis3 release -r src -wL",
+    "build": "fis3 release -r src -d dist"
+  },
+  "author": "chaz",
+  "license": "MIT",
+  "devDependencies": {
+  }
+}
