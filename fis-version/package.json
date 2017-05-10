@@ -11,5 +11,6 @@
   "author": "chaz",
   "license": "MIT",
   "devDependencies": {
+    "art-template": "^4.8.2"
   }
 }

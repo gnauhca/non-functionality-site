@@ -1,4 +1,13 @@
-  <!-- 引入 layout.html 布局，输出到 layout.html 的 main 里去-->
-  <layout layout-src="../../components/layout/layout.html" layout-block="main" title="service">
-    <h1>service 页</h1>
-  </layout>
+<% extend('../../components/layout/layout.html') %>
+
+<% block('title', function(){ %> 服务页 <% }) %>
+<% block('head', function(){ %> <% }) %>
+<% block('main', function(){ %> 
+  <h1>服务页</h1>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3" style="height: 100px; background: red;">service</div>
+    </div>
+  </div>
+<% }) %>

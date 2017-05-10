@@ -5,7 +5,7 @@ cnpm i -g fis-parser-layout
 cnpm i -g fis3-parser-less-2.5.x
 cnpm i -g fis-parser-node-sass
 */
-
+var template = require('art-template');
 
 
 
@@ -23,53 +23,12 @@ fis.match('::package', {
 
 // npm i fis-parser-layout
 fis.match('/**.html', {
-    parser: fis.plugin('layout', {
-        // layout输出位置的元素 
-        lopm: 'layout-block',
-        // 存放layout输出位置的标签ID 的属性 
-        lopa: 'name',
-
-        // page获取布局文件的元素 
-        pqlfm: 'layout',
-        // 存放layout文件的路径的属性 
-        pqlfa: 'layout-src',
-        // 存放指定输出位置ID的属性，优先于pqlbm 
-        pqlfoba: 'layout-block',
-
-        // 指定输出位置的元素 
-        pqlbm: 'layout-block',
-        // 存放指定输出位置ID的属性 
-        pqlba: 'name',
-
-
-        // 引入组件（页面碎片）的元素 
-        pqwm: 'include',
-        // 存放引入组件（页面碎片）的路径 
-        pqwa: 'include-src',
-
-        // 内置了 artTemplate 模板 
-        // 注：<% %> 定界符不兼容 
-        template_openTag: '{%',
-        template_closeTag: '%}',
-        template_escape: true,
-        template_cache: true,
-        template_compress: true,
-        template_helper: {
-            // 页面调用 <%=add(1,2)%> 
-            'add': function (sum1, sum2) {
-                return sum1 + sum2;
-            }
-        },
-
-        // {%=_id%} 获取 随机的id 
-        // 随机ID长度 
-        randomIDLen: 8,
-        // 随机ID的前缀 
-        randomIDPrefix: 'id_',
-
-        // 格式化 html 代码 
-        beautify: true
-    }),
+    parser: function(content, file, setting) {
+        template.defaults.extname = '.html';
+        var html = template(file.realpath, {});
+        // console.log(html);
+        return html;
+    },
     release: false
 });
 

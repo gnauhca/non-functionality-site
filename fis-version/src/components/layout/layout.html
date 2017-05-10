@@ -3,29 +3,25 @@
 
 <head>
 <meta charset="UTF-8">
-<title>{%=title%}</title>
-<link rel="stylesheet" href="../../common/css/bootstrap.less">
-<link rel="stylesheet" href="../../common/css/common.scss">
+<title><% block('title') %></title>
+<link rel="stylesheet" href="/common/css/bootstrap.less">
+<link rel="stylesheet" href="/common/css/common.scss">
 <!-- 这里出输 head内容 -->
-<layout-block name="head"></layout-block>
+<% block('head') %>
 </head>
 
 <body>
     <div class="container">
-        <include include-src="../header/header.html" data-nav=`[
-            {"href": "#", "text"="home"},
-            {"href": "#", "text"="link1"},
-            {"href": "#", "text"="link2"}
-        ]`></include>
+        <% include('../header/header.html') %>
 
-        <layout-block name="main"></layout-block>
+        <% block('main') %>
 
-        <include include-src="../footer/footer.html"></include>
+        <% include('../footer/footer.html') %>
     </div>
 
 
-<script src="../../common/js/mod.js"></script>    
-<script src="../../common/js/jquery.min.js"></script>    
-<script src="../../common/js/swiper-3.4.2.min.js"></script>    
+<script src="/common/js/mod.js"></script>    
+<script src="/common/js/jquery.min.js"></script>    
+<script src="/common/js/swiper-3.4.2.min.js"></script>    
 </body>
 </html>
